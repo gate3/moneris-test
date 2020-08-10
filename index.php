@@ -13,7 +13,7 @@
   <meta property="og:image" content="">
 </head>
     <body>
-        <form action='from Section 9' method='post'>
+        <form action='https://merchant-test.interacidebit.ca/gateway/merchant_test_processor.do' method='post'>
             <?php $orderid= 'ord-'.date("dmy-G:i:s"); ?>
             <input type='text' name='IDEBIT_INVOICE' value='<?php echo $orderid; ?>'>
             <input type='text' name='IDEBIT_AMOUNT' value='100'> <!-- ($1.00) use cent values instead of dollar.cent format -->
