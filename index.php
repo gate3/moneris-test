@@ -14,13 +14,13 @@
 </head>
     <body>
         <form action='https://merchant-test.interacidebit.ca/gateway/merchant_test_processor.do' method='post'>
-            <?php $orderid= 'ord-'.date("dmy-G:i:s"); ?>
+            <?php $orderid= 'ord-'.date("dmy-G-i-s"); ?>
             <input type='text' name='IDEBIT_INVOICE' value='<?php echo $orderid; ?>'>
             <input type='text' name='IDEBIT_AMOUNT' value='100'> <!-- ($1.00) use cent values instead of dollar.cent format -->
-            <input type='text' name='IDEBIT_MERCHNUM' value='from Moneris Solutions'>
+            <input type='text' name='IDEBIT_MERCHNUM' value=''> <!-- Moneris to provide this-->
             <input type='text' name='IDEBIT_CURRENCY' value='CA'>
-            <input type='text' name='IDEBIT_FUNDEDURL' value='https://peaceful-journey-49078.herokuapp.com/funded.php'>
-            <input type='text' name='IDEBIT_NOTFUNDEDURL' value='https://peaceful-journey-49078.herokuapp.com/not-funded.php'>
+            <input type='text' name='IDEBIT_FUNDEDURL' value='<?php echo $_ENV['BASE_URL']; ?>funded.php'>
+            <input type='text' name='IDEBIT_NOTFUNDEDURL' value='<?php echo $_ENV['BASE_URL'];?>not-funded.php'>
             <input type='text' name='IDEBIT_MERCHLANG' value='en'>
             <input type='text' name='IDEBIT_VERSION' value='1'>
             <input type="submit" name="Submit" value="Submit to Gateway">
